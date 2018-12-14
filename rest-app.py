@@ -26,6 +26,7 @@ def api_all():
 
 
 @app.route('/api/v1/resources/languages/', methods=['GET'])
+
 def Id_lang():
     if 'text' in request.args:
         text = str(request.args['text'])
@@ -60,7 +61,7 @@ def api_translate():
         return translation["translations"][0]['translation']
 
     lang = Id_lang()
-    Translate(lang, text)
+    return Translate(lang, text)
 
 
 
